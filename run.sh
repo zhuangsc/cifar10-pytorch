@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
-ls /dataset
+ls /datasets
 
 python3 main.py
