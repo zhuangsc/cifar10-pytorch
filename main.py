@@ -17,6 +17,7 @@ from models import *
 
 parser = argparse.ArgumentParser(description='PyTorch CIFAR10 Training')
 parser.add_argument('--lr', default=0.1, type=float, help='learning rate')
+parser.add_argument('--epochs', default=10, type=int, help='number of epochs')
 parser.add_argument('--resume', '-r', action='store_true',
                     help='resume from checkpoint')
 args = parser.parse_args()
@@ -151,7 +152,7 @@ def test(epoch):
 
 
 if __name__ == "__main__":
-    for epoch in range(start_epoch, start_epoch+200):
+    for epoch in range(start_epoch, start_epoch+args.epochs):
         train(epoch)
         test(epoch)
         scheduler.step()
